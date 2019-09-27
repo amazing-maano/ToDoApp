@@ -36,9 +36,6 @@ app.get('/index', function(req, res){
   })
 });
 
-app.get('/index/new', function(req, res){
- res.render('new'); 
-});
 
 app.post('/index', (req, res) => {
  req.body.todo.text = req.sanitize(req.body.todo.text);
