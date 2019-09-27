@@ -1,0 +1,31 @@
+<% include header %>
+
+<div class="col text-center">
+	<div class="form-group d-flex flex-column justify-content-center">
+		<form action="/index" method="POST" class="form-inline mx-auto">
+			<input type="text" id="form1" name="todo[text]" class="form-control" placeholder="Your Task">
+			<button type='submit' class="btn btn-success btn-rounded">Add</button>
+		</form>
+	</div>
+
+	<div class="col-8 mx-auto">
+		<ul class="list-group list-group-flush ">
+		<% todos.forEach(function(todo){ %>
+			<li class="list-group-item list-group-item-action list-group-item-light text-capitalize row">
+				<span class="lead"><%= todo.text %></span>
+					
+						<a href="/<%=todo._id%>/edit" class="btn btn-warning btn-rounded"><i class="fas fa-edit"></i></a>
+						<form style="display: inline" method="POST" action="/deleteTask/<%=todo._id%>?_method=DELETE">
+							<button type="submit" class="btn btn-danger btn-rounded "><i class="fas fa-trash"></i></button>
+						</form>
+					
+					<div class="clearfix"></div>
+				</li>
+			<% }); %>
+			</ul>
+		
+	</div>
+	
+<% include footer %>
+
+

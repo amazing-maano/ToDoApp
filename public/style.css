@@ -1,0 +1,39 @@
+* {
+	margin: 0px; 
+	padding: 0px; 
+	box-sizing: border-box;
+	font-family: 'Exo 2', sans-serif;
+  }
+  
+  
+header{
+	background-image: url('/bg-01.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	padding: 3%;
+}  
+form {
+    display: inline-block;
+}
+
+.form-group {
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+.col {
+	padding-top: 6%;
+}
+
+span {
+	min-width: 100px;
+	width: 100px;
+	margin-right: 50%;
+}
+
+h1{
+	text-align: center;
+	font: bold;
+	color: white;
+}
