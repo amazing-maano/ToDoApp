@@ -6,10 +6,11 @@ const expressSanitizer = require('express-sanitizer')
 const methodOverride = require('method-override')
 const path = require('path')
 const dotenv = require('dotenv').config()
+let port = process.env.PORT || 3000;
 
-const url = process.env.MONGODB_URI || 'mongodb://localhost/todoappmk';
+const uristring = process.env.MONGODB_URI || 'mongodb://localhost/todolistejs';
 const mongoose = require('mongoose')
-mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify : false});
+mongoose.connect(uristring, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify : false});
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
@@ -70,6 +71,4 @@ app.delete('/deleteTask/:id', (req, res) => {
 });
 
 
-app.listen(3000, () => {
-  console.log('Server running on port 3000');
-});
+app.listen(port, () => console.log(`app listening on port ${port}!`))
